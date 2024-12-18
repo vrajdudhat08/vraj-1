@@ -1,48 +1,47 @@
+import React from 'react'
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function Login() {
-    const [email, setemail] = useState("")
-    const [password, setpassword] = useState("")
- 
-    const navigate = useNavigate()
+  const [email, setemail] = useState("")
+  const [password, setpassword] = useState("")
 
-    function handlesubmit() {
-        console.log(email,password);
-        axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=
+  const navigate = useNavigate()
+
+  function handleSumbit() {
+      console.log(email,password);
+      axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=
 AIzaSyCvhJ3x3mRa_Luu7CGBsNoweK27jdSuq2o`,{email,password})
-        .then((res) => { sessionStorage.setItem("token",res.data.idToken)
-        navigate("/")
-    })
-
-        .catch((err) => console.log(err))
-    }
-
+      .then((res) => { sessionStorage.setItem("token",res.data.idToken)
+      navigate("/profile")
+  })
+  
+      .catch((err) => console.log(err))
+  }
   return (
-    <div className='container p-5 col-md-4'>
-        <h2 className='text-center my-4'>Login</h2>+6+8
-        <div className="mb-3">
-            <label htmlFor="exampleFormControlInput1" 
-            className="form-label">Email address</label>
-            <input type="email" 
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
-            className="form-control" 
-            id="exampleFormControlInput1"  />
-        </div>
+    <div  className='container p-5 col-md-4 border border-black text-black bg-secondary' >
+    <h2 className='text-center mb-4'>Login</h2>
+    <div className="mb-4">
+  <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
+  <input type="email" className="form-control"
+  value={email}
+  onChange={(e) => setemail(e.target.value)}
+   id="exampleFormControlInput1" placeholder="name@example.com" />
+</div>
+<div className="mb-4">
+  <label htmlFor="exampleFormControlInput1" className="form-label">Password</label>
+  <input type="password"
+ value={password}
+ onChange={(e) => setpassword(e.target.value)}
+   className="form-control"
+    id="exampleFormControlInput1" />
+</div>
+<button className="btn btn-primary" onClick={handleSumbit}>
+        Submit
+      </button>
+</div>
 
-        <div className="mb-3">
-            <label htmlFor="exampleFormControlInput1" 
-            className="form-label">Password</label>
-            <input type="password" 
-            value={password}
-            onChange={(e) => setpassword(e.target.value)}
-            className="form-control" 
-            id="exampleFormControlInput1"  />
-        </div>
-    <button className='btn btn-primary' onClick={(handlesubmit)}>Login</button>
-    </div>
   )
 }
 
