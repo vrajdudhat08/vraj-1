@@ -65,12 +65,13 @@ code {
   height: 250px;
   width:800px;
   background-color: rgb(102, 100, 100);
-  margin-left: 70px;
+  margin-left: 95px;
   margin-top: -270px;
+  border-radius: 10px;
 }
 img{
   margin-top: 70px;
-  margin-left: 75px;
+  margin-left: 120px;
   border-radius: 50%;
 }
 .nam{
@@ -94,6 +95,14 @@ img{
     height: 95px;
     width: 500px;
     padding-left: 14px;
+}
+.company-logo1{
+  height:50px ;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 530px;
+  margin-top: -510px;
+
 }
 .btnn{
   border: 0px ;
@@ -143,4 +152,92 @@ margin-top: 44px;
 }
 .vraj2{
   width: 200px;
+}
+.laykat{
+  height: 200px;
+  width: 898px;
+  font-size: 25px;
+  padding-left: 83px;
+  font-weight: 300;
+  padding-top: 10px;
+  border-radius: 10px;
+
+}
+
+.editing{
+  margin-left: 700px;
+   margin-top: -40px;
+   font-size: 24px;
+}
+.edit{
+  margin-left: 850px;
+  margin-top: -188px;
+  font-size: 24px;
+}
+.company-logo{
+  height:50px ;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 75px;
+  margin-top: 20px;
+}
+.experience-details{
+  margin-left: 150px;
+  margin-top: -50px;
+}
+.container3 {
+  border: 2px solid black;
+  margin-left: 300px;
+  width: 700px;
+  height: 700px;
+  background-color: rgb(211, 182, 145);
+  
+  
+}
+.bold{
+  font-weight: bold;
+}
+.btn10{
+  margin-top: 30px;
+  border: 2px solid black;
+}
+.education{
+  border: 1px solid black;
+  margin-top: 80px;
+  border-radius: 10PX;
+  height: 200px;
+  width: 898px;
+  padding-left: 20px;
+ padding-top: 10px;
+ 
+}
+.education >h4{
+  margin-left: 67px;
+}
+.education p{
+  margin-left: 67px;
+}
+.btn11{
+  margin-left: 67px;
+  margin-top: 50px;
+}
+.skils{
+  border: 1px solid black;
+  height: 200px;
+  width: 898px;
+  margin-top: 30px;
+  border-radius: 10px ;
+}
+.skills{
+  padding-left: 85px;
+  padding-top: 20px;
+}
+.css{
+  
+  margin-left: 85px;
+}
+.btn12{
+
+  margin-left: 90px;
+  margin-top: 50px;
 }

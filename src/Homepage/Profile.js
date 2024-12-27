@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Profile() {
 
@@ -13,18 +13,22 @@ function Profile() {
         Gender: "",
         City: "",
     })
-
-    function handleSubmit(){
-        console.log(user);
-    }
+    const navigate = useNavigate();
 
     function handlechange(e){
         const {name, value} = e.target
         setuser({...user, [name]: value})
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('User Data:', user);
+        localStorage.setItem('userData', JSON.stringify(user));
+        navigate('/mainpage');
+      };
+
  
-    console.log(user);
+   
 
   return (
     
@@ -90,21 +94,7 @@ function Profile() {
         </select>
     </div>
 
-    {/* <div>
-        <p>Gender</p>
-        <div className="form-check">
-            <input className="form-check-input" type="radio" name="Gender"
-            onChange={(e) => handlechange(e)}
-             id="flexRadioDefault1" />
-            <label className="form-check-label" htmlFor="flexRadioDefault1">Male</label>
-        </div>
-        <div className="form-check">
-            <input className="form-check-input" type="radio" name="Gender"
-            onChange={(e) => handlechange(e)}
-             id="flexRadioDefault2" defaultChecked />
-                <label className="form-check-label" htmlFor="flexRadioDefault2">Female</label>
-        </div>
-    </div> */}
+   
 
 
     <div className="col-md-4">
@@ -117,10 +107,10 @@ function Profile() {
     </div>
 
     
-    <Link className='nav=link-active' to = "/mainpage">
+    
+    <button className="btn btn-primary" onClick={handleSubmit}>Save</button>
 
-        <button className="btn btn-primary" onClick={handleSubmit}>Submit form</button>
-    </Link> 
+
 </form>
 
 )
